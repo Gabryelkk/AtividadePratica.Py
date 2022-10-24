@@ -1,4 +1,62 @@
+def metragem_limpeza():
+    print('\nBem-vindo ao Programa de serviços de Limpeza do Gabryel Lima Da Silva')
+    print(80 * '*')
+    '''Nessa função será averiguada pela triagem e cálculos dos valores com base nas metragens recebidas em 'm'. Passando
+    parâmetros ds variáveis calculadas para a função seguinte.'''
+    while True: 
+        try:
+            m = float(input('Digite a metragem da casa: '))
+            if m >= 30 and m < 300:
+                v = 60 + 0.3 * m 
+                print('Valor de: R$ {}'.format(round(v,2)))
+                break
+            elif m >= 300 and m < 701:
+                v = 120 + 0.5 * m
+                print('Valor de: R${}'.format(round(v,2)))
+                break
+            else:
+                v = m < 30 or m > 700
+                print('\tNão trabalhamos com valores menores que 30m² ou maiores que 700m²'.upper())
+                continue
+        except:
+            print('\tApenas valores numéricos são aceitos!'.upper())
+    tipo_limpeza(v,m)
+            
+def tipo_limpeza(valor,me):
+    print(80 * '-')
+    '''Agora está função determinará com base em outro cálculo o valor a ser cobrado.'''
+    while True:
+        print(80 * '°')
+        print('\n\t\tEscolha o tipo de limpeza:'.upper())
+        print('B - Básica - Indicada para sujeiras semanais ou quinzenais')
+        print('C - Completa (30% a mais) - Indicada para sujeiras antigas e/ou não rotineiras')    
+        t = input('\nDIGITE AQUI: ')
+        print(80 * '-')
+        if t == 'B':
+            b = 1
+            v2 = valor * b
+            print('\nVocê selecionou a limpeza Básica!!!')
+            print('Valor do serviço: {}'.format(round(v2,2)))
+            print(80 * '-')
+            print(80 * '°')
+            adicional_limpeza(v2,me,b)
+            break
+        elif t == 'C':
+            c = 1.30
+            v1 = valor * c
+            print('\nVocê selecionou a limpeza Completa!!!')
+            print('Valor do serviço: {}'.format(round(v1,2)))
+            print(80 * '-')
+            print(80 * '°')
+            adicional_limpeza(v1,me,c)
+            break
+        else:
+            print('' * 8 + '\n Apenas as opções apresentadas!'.upper())
+            continue
+
 def adicional_limpeza(adi,me,ti):
+    '''Finalmente está ultima função perguntará e calculará o valor de acordo com os os adicionais solicitados, se assim
+    ocorrer. O o programa finalizará...'''
     a = 0.0
     print(' ' * 30 + 'Adicionais' + ' ' * 30 + 'Valor (R$)')
     print('|' + '¨' * 68 + '|' + '¨' * 10 + '|')
@@ -40,58 +98,5 @@ def adicional_limpeza(adi,me,ti):
         except:
             print('' * 8 + 'Apenas valores apresentados na tabela!'.upper())
             
-def metragem_limpeza():
-    print('\nBem-vindo ao Programa de serviços de Limpeza do Gabryel Lima Da Silva')
-    print(80 * '*')
-    while True: 
-        try:
-            m = float(input('Digite a metragem da casa: '))
-            if m >= 30 and m < 300:
-                v = 60 + 0.3 * m 
-                print('Valor de: R$ {}'.format(round(v,2)))
-                break
-            elif m >= 300 and m < 701:
-                v = 120 + 0.5 * m
-                print('Valor de: R${}'.format(round(v,2)))
-                break
-            else:
-                v = m < 30 or m > 700
-                print('\tNão trabalhamos com valores menores que 30m² ou maiores que 700m²'.upper())
-                continue
-        except:
-            print('\tApenas valores numéricos são aceitos!'.upper())
-    tipo_limpeza(v,m)
-
-
-def tipo_limpeza(valor,me):
-    print(80 * '-')
-    while True:
-        print(80 * '°')
-        print('\n\t\tEscolha o tipo de limpeza:'.upper())
-        print('B - Básica - Indicada para sujeiras semanais ou quinzenais')
-        print('C - Completa (30% a mais) - Indicada para sujeiras antigas e/ou não rotineiras')    
-        t = input('\nDIGITE AQUI: ')
-        print(80 * '-')
-        if t == 'B':
-            b = 1
-            v2 = valor * b
-            print('\nVocê selecionou a limpeza Básica!!!')
-            print('Valor do serviço: {}'.format(round(v2,2)))
-            print(80 * '-')
-            print(80 * '°')
-            adicional_limpeza(v2,me,b)
-            break
-        elif t == 'C':
-            c = 1.30
-            v1 = valor * c
-            print('\nVocê selecionou a limpeza Completa!!!')
-            print('Valor do serviço: {}'.format(round(v1,2)))
-            print(80 * '-')
-            print(80 * '°')
-            adicional_limpeza(v1,me,c)
-            break
-        else:
-            print('' * 8 + '\n Apenas as opções apresentadas!'.upper())
-            continue
-    
+'''Logo a iniciar o programa chama a primeira função, vamos subir ao topo do programa...'''
 metragem_limpeza()
