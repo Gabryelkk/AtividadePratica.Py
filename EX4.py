@@ -31,11 +31,11 @@ def consultar_funcionarios():
                         
             elif consulta == 2:
                 print('\nBem-vindo a consultar o id!'.upper())
-                entra = int(input('Digite o id de funcionário:> '))
-                for funcionario in lista:
-                    if funcionario['ID'] == entra:
-                        for key, value in funcionario.items():
-                            print('{}:> {}'.format(key,value))
+                entra = int(input('\nDigite o id de funcionário:> '))
+                for dicionarioFuncionario in lista:
+                    if dicionarioFuncionario['ID'] == entra:
+                        for key, value in dicionarioFuncionario.items():
+                            print('{}:> {}'.format(key,value))    
                             
             elif consulta == 3:
                 print('\tBem-vindo aconsultar funcionário(s) por setor!')
