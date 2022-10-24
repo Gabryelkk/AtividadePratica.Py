@@ -1,44 +1,45 @@
 lista = []
-identificador = 0
+id = 0
 
 def cadastrar_funcionario(id):
-    print('\nO ID do novo funcionário: |>{}<|'.format(id))
+    print('\nO ID do novo funcionário: | {} |'.format(id))
     nome = input('Digite o nome do funcionário: ')
     setor = input('Digite o setor: ')
     salario = input('Informe o salário:R$ ')
-    dicionarioFuncionario = {'\nID': id,
+    dicionarioFuncionario = {'ID': id,
                              'Nome': nome,
                              'Setor': setor,
                              'Salario': salario}
     lista.append(dicionarioFuncionario.copy())
     print('\nFuncionário cadastrado!'.upper())
+    
 
 def consultar_funcionarios():
     while True:
         try:    
             print('\nConsultar funcionários:'.upper())
             consulta = int(input('Entre com a opção desejada:\n'
-                                '1 - Consultar todos os funcionários\n'
-                                '2 - Consultar Funcionário po id\n'
-                                '3 - Consultar Funcionários(s) por setor\n'
-                                '4 - Retornar\n'
-                                '=>' ))
+                                '1-Consultar todos os funcionários\n'
+                                '2-Consultar Funcionário po id\n'
+                                '3-Consultar Funcionários(s) por setor\n'
+                                '4-Retornar\n'
+                                '=> '))
             if consulta == 1:
                 print('\nBem-vindo consultar todos!'.upper())
-                for dicionarioFuncionario in lista:
-                    for key, value in dicionarioFuncionario.items():
+                for funcionario in lista:
+                    for key, value in funcionario.items():
                         print('{}:> {}'.format(key,value))
                         
             elif consulta == 2:
                 print('\nBem-vindo a consultar o id!'.upper())
                 entra = int(input('\nDigite o id de funcionário:> '))
-                for dicionarioFuncionario in lista:
-                    if dicionarioFuncionario['ID'] == entra:
-                        for key, value in dicionarioFuncionario.items():
+                for funcionario in lista:
+                    if funcionario['ID'] == entra:
+                        for key, value in funcionario.items():
                             print('{}:> {}'.format(key,value))    
                             
             elif consulta == 3:
-                print('\tBem-vindo aconsultar funcionário(s) por setor!')
+                print('\nBem-vindo aconsultar funcionário(s) por setor!')
                 entra = input('Digite o setor do funcionário:> ')
                 for funcionario in lista:
                     if funcionario['Setor'] == entra:
@@ -54,11 +55,12 @@ def consultar_funcionarios():
             print('Pare de inserir um valor não inteiro!')
 
 def remover_funcionario():
-    print('\tBem-vindo a remover funcionário(s)!')
-    entra = input('Digite o id do funcionário:> ')
-    for funcionario in cadastrar_funcionario:
-        if funcionario['id'] == entra:
-            funcionario.remove(funcionario)
+    print('Bem-vindo a remover funcionário(s)!')
+    entra = int(input('Digite o id do funcionário:> '))
+    for funcionario in lista:
+        if funcionario['ID'] == entra:
+            lista.remove(funcionario)
+            
 
 while True:
     try:
@@ -75,7 +77,7 @@ while True:
 
         if a == 1:
             print('Bem-vindo ao cadastrar funcionários:'.upper())
-            id = input('\nDigite o ID do funcionário novo: ')
+            id += 1
             cadastrar_funcionario(id)
         elif a == 2:
             consultar_funcionarios()
