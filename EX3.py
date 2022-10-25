@@ -86,7 +86,7 @@ def adicional_limpeza(adi,me,ti):
                 a += 20
                 adi += 20
                 print('Você selecionou a 3° opção!')
-                print('Valor: {}'.format(round(adi,2))
+                print('Valor: {}'.format(round(adi,2)))
                 print(80 * '-')
             if ad == 0:
                 print(80 * '-')
