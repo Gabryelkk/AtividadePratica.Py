@@ -5,7 +5,7 @@ def metragem_limpeza():
     parâmetros ds variáveis calculadas para a função seguinte.'''
     while True: 
         try:
-            m = float(input('Digite a metragem da casa: '))
+            m = int(input('Digite a metragem da casa: '))
             if m >= 30 and m < 300:
                 v = 60 + 0.3 * m 
                 print('Valor de: R$ {}'.format(round(v,2)))
@@ -51,7 +51,7 @@ def tipo_limpeza(valor,me):
             adicional_limpeza(v1,me,c)
             break
         else:
-            print('' * 8 + '\n Apenas as opções apresentadas!'.upper())
+            print('Apenas as opções apresentadas!'.upper())
             continue
 
 def adicional_limpeza(adi,me,ti):
