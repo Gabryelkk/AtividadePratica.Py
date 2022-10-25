@@ -68,6 +68,7 @@ def remover_funcionario():
         if funcionario['ID'] == entra:
             lista.remove(funcionario)
             print(62 * '-')
+            print('Funionário removido!'.upper())
 
 print('\nBem-vindo ao controle de funcionários do Gabryel Lima Da Silva')
 print(62 * '*')
