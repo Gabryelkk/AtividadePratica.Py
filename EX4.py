@@ -2,6 +2,7 @@ lista = []
 id = 0
 
 def cadastrar_funcionario(id):
+    '''Nesta função irá se cadastrar um novo funcionário apenas contado com o id.'''
     print('\nO ID do novo funcionário: | {} |'.format(id))
     nome = input('Digite o nome do funcionário: ')
     setor = input('Digite o setor: ')
@@ -15,6 +16,7 @@ def cadastrar_funcionario(id):
     print(62 * '-')
     
 def consultar_funcionarios():
+    '''Está é a função de consulta onde dará opções para se chegar a certo funcionário especifico, ou todos.'''
     while True:
         try:    
             print('\nBem-vindo ao consultar funcionários!'.upper())
@@ -58,6 +60,7 @@ def consultar_funcionarios():
             print('Pare de inserir um valor não correspondente!')
 
 def remover_funcionario():
+    '''Finalmente se tem a ultima opção. Se precisar será redirecionado para o menu novamente.'''
     print(62 * '-')
     print('Bem-vindo a remover funcionário(s)!')
     entra = int(input('Digite o id do funcionário:> '))
@@ -78,7 +81,8 @@ while True:
         print('3-Remover funcionário')
         print('4-Sair')
         a = int(input('=> '))
-
+        '''No program principal é executado validando a informação de entrada exibida na tabela, logo em seguida
+        entra em alguma das funções...'''
         if a == 1:
             print(62 * '-')
             print('\nBem-vindo ao cadastrar funcionários!'.upper())
@@ -91,6 +95,7 @@ while True:
             print(62 * '-')
             remover_funcionario()
         elif a == 4:
+            '''E está parte encerra o código.'''
             print('\nFinalizando o programa...')
             print(62 * '-')
             break
