@@ -1,4 +1,5 @@
 print('\nBem-vindo a loja do Gabryel Lima Da Silva')
+print(41 * '*')
 p = float(input('\nDigite o valor do Produto:'))
 q = int(input('Digite a quantidade do produto:'))
 '''Primeiramente irá ser armazenado na memória as variáveis 'p' como valor unitário de cada produto, e a variavel
